@@ -19,6 +19,10 @@ describe DockingStation do
     #end
   end
 
+describe '#dock' do
+  it "raises error when user trues to dock bike beyond capacity" do
+    expect{subject.dock(bike)}.to raise_exception "Station Full"
+  end
 
   it {is_expected.to respond_to(:dock).with(1).argument}
 
@@ -32,4 +36,6 @@ describe DockingStation do
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
+end
+
 end

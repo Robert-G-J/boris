@@ -21,6 +21,8 @@ describe DockingStation do
 
 describe '#dock' do
   it "raises error when user trues to dock bike beyond capacity" do
+    bike = Bike.new
+    subject.dock(bike)
     expect{subject.dock(bike)}.to raise_exception "Station Full"
   end
 
